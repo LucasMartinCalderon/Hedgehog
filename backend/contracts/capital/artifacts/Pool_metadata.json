@@ -1,0 +1,478 @@
+{
+	"compiler": {
+		"version": "0.8.21+commit.d9974bed"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_HEDHTokenAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_master",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "member",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "ethIn",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "nxmOut",
+						"type": "uint256"
+					}
+				],
+				"name": "HEDHBought",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "member",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "nxmIn",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "ethOut",
+						"type": "uint256"
+					}
+				],
+				"name": "HEDHSold",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Payout",
+				"type": "event"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [],
+				"name": "MAX_BUY_SELL_MCR_ETH_FRACTION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "MAX_MCR_RATIO",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "MCR_RATIO_DECIMALS",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "minTokensOut",
+						"type": "uint256"
+					}
+				],
+				"name": "buyHEDH",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "nxmAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "currentTotalAssetValue",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "mcrEth",
+						"type": "uint256"
+					}
+				],
+				"name": "calculateEthForHEDH",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "ethAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "currentTotalAssetValue",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "mcrEth",
+						"type": "uint256"
+					}
+				],
+				"name": "calculateHEDHForEth",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "totalAssetValue",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "mcrEth",
+						"type": "uint256"
+					}
+				],
+				"name": "calculateMCRRatio",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "totalAssetValue",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "mcrEth",
+						"type": "uint256"
+					}
+				],
+				"name": "calculateTokenSpotPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenPrice",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "hedhAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "getEthForHEDH",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "ethAmount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "ethAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "getHEDHForEth",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "minEthOut",
+						"type": "uint256"
+					}
+				],
+				"name": "sellHEDH",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "sellHEDHTokens",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "payoutAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "sendPayout",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"buyHEDH(uint256)": {
+					"params": {
+						"minTokensOut": "Minimum amount of tokens to be bought. Revert if boughtTokens falls below this number."
+					}
+				},
+				"calculateEthForHEDH(uint256,uint256,uint256)": {
+					"details": "Computes token sell value for a tokenAmount in ETH with a sell spread of 2.5%. for values in ETH of the sale <= 1% * MCReth the sell spread is very close to the exact value of 2.5%. for values higher than that sell spread may exceed 2.5% (The higher amount being sold at any given time the higher the spread)"
+				},
+				"getHEDHForEth(uint256)": {
+					"params": {
+						"ethAmount": "Amount of ETH used for buying."
+					},
+					"returns": {
+						"_0": "tokenValue  Tokens obtained by buying worth of ethAmount"
+					}
+				},
+				"sellHEDH(uint256,uint256)": {
+					"params": {
+						"minEthOut": "Minimum amount of ETH to be received. Revert if ethOut falls below this number.",
+						"tokenAmount": "Amount of tokens to sell."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"buyHEDH(uint256)": {
+					"notice": "Buys NXM tokens with ETH."
+				},
+				"calculateTokenSpotPrice(uint256,uint256)": {
+					"notice": "Calculates token price in ETH of 1 NXM token. TokenPrice = A + (MCReth / C) * MCR%^4"
+				},
+				"getHEDHForEth(uint256)": {
+					"notice": "Get value in tokens for an ethAmount purchase."
+				},
+				"sellHEDH(uint256,uint256)": {
+					"notice": "Sell NXM tokens and receive ETH."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/capital/Pool.sol": "Pool"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Master.sol": {
+			"keccak256": "0x3d3184b9516122e6fb70e4b5d512b6a0219abe38c4792b9cbf382dbffb880c65",
+			"urls": [
+				"bzz-raw://e1bb612708fc4fd742569a13ff47a2b359e21044f201e7eb99316a25c648203a",
+				"dweb:/ipfs/QmZZwWpCLopjSVdjPNR1LxxrBXp7wFEgmqzYuQUQFh1z6J"
+			]
+		},
+		"contracts/capital/Pool.sol": {
+			"keccak256": "0x9384ec19c8f70da0a877eaae62e5d5754836083411f846f9e966f49649276e73",
+			"urls": [
+				"bzz-raw://58be2551741713c88b074bf449f5b296a70a82fe8b406dec9bf9d12f831c6f60",
+				"dweb:/ipfs/QmQ52U8XryPJc37EWWx3MXJdh7vkULpXY1yUTsFCWW2AmU"
+			]
+		},
+		"contracts/interfaces/IMCR.sol": {
+			"keccak256": "0xba1dfdc615074fe4d67cc249ae373f3d83ebf1f184b199c96c29537ee769ac61",
+			"urls": [
+				"bzz-raw://a6dd0f3bb2cc1167a49a36d1c1c10903c7896dec9bef820fe106104f437e0761",
+				"dweb:/ipfs/QmP4e8YdnBphnBhWFFC96qjvLaQFr5R3rLSXcydyX6gkpy"
+			]
+		},
+		"contracts/interfaces/IPool.sol": {
+			"keccak256": "0x4f981cd82fa7f4289d185d8b5c307a7626328196619922bf638f0214bcd42f23",
+			"urls": [
+				"bzz-raw://6446bfc6a64d4ebfdc35a4757c7eaf735b80bc69d07021428b97d51ac11b63ea",
+				"dweb:/ipfs/QmXdu5Dtjj9eW2bCe3Q5VBEfMivRYxgPwMgwVLbUQgXRzp"
+			]
+		},
+		"contracts/libraries/Math.sol": {
+			"keccak256": "0x57f526a92c1f4d0de03da446b736d2e7688929e49353628cc7e23e93d81b49c9",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://172b2b8cf28838b698acb7e9927ece6898c62b9627470504051dbae0ce5945ce",
+				"dweb:/ipfs/QmZLHfcgt3fQz85h183rH96vkkAg9mDPXKfWV4ECCefn43"
+			]
+		},
+		"contracts/token/HEDHToken.sol": {
+			"keccak256": "0x9de9f739f368f038809d28f0962bb954db9dff33874c8bbdae0415c97c944535",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://da0086e8869aee2c5685520f704d397e59cfc02d83f7a08de25aa4839c094033",
+				"dweb:/ipfs/QmTj6Tk1n3BYyuTm45zXQKS2e1g8CZXaDqwiNSKYUkfy9o"
+			]
+		},
+		"contracts/token/external/OZIERC20.sol": {
+			"keccak256": "0xf5d24d430607291d465477ae57c61e40405515ddb7f75283d2a6deaa39b85855",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://826cccad292dd41f022aa97b96f72baee5d4cdc6b1a09660d22fea0c9b5841d4",
+				"dweb:/ipfs/QmUnfucwVnfSiyQaMMS1RANH5vfR2LnuMonkydWGh4Lkpi"
+			]
+		},
+		"contracts/token/external/OZSafeMath.sol": {
+			"keccak256": "0x526e7aff423fa1ee6cbdade80dc1f0a30c9267257279a4ce1c372259c6bfd828",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://53bc2d4ceb62a12e0ba396f67e4311bac38981d4d9e7283e05f20ece9f4913ce",
+				"dweb:/ipfs/Qma4qCGvb4yc7XmcaRPhYhSrzMqGSA3jc9Qa7JhzzMiZAk"
+			]
+		}
+	},
+	"version": 1
+}

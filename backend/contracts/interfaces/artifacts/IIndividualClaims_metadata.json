@@ -1,0 +1,94 @@
+{
+	"compiler": {
+		"version": "0.8.21+commit.d9974bed"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "redeemClaimPayout",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint32",
+						"name": "coverId",
+						"type": "uint32"
+					}
+				],
+				"name": "submitClaim",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "coverId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "coverOwner",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "payoutRedeemed",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct Claim",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/interfaces/IIndividualClaims.sol": "IIndividualClaims"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/interfaces/IIndividualClaims.sol": {
+			"keccak256": "0xd17042012a84ebc116df46f5023db65192b8d27c73ac3ba975a9ef9c0845dc05",
+			"urls": [
+				"bzz-raw://5cf1e15ae68af7b2d3db4ee05a5a1f13915f555cce334bfd7c14d73e0f76987b",
+				"dweb:/ipfs/QmPHtaGcZo3CDBGsugNhUkYNrb9nYMhccz27c4jJPAbiKg"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,325 @@
+{
+	"compiler": {
+		"version": "0.8.21+commit.d9974bed"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "InsufficientEthSent",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ReturningEthRemainderToSenderFailed",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "SendingEthToCommissionDestinationFailed",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "SendingEthToPoolFailed",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "token0",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "token1",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "token1Qty",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "token0Qty",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lowerBoundRatio",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "upperBoundRatio",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "period",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "pairStr",
+								"type": "string"
+							}
+						],
+						"internalType": "struct BuyCoverParams",
+						"name": "params",
+						"type": "tuple"
+					}
+				],
+				"name": "buyCover",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "coverId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "coverDataCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "count",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "token0",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "token1",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "token1Qty",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "token0Qty",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lowerBoundRatio",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "upperBoundRatio",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "period",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "pairStr",
+								"type": "string"
+							}
+						],
+						"internalType": "struct BuyCoverParams",
+						"name": "params",
+						"type": "tuple"
+					}
+				],
+				"name": "coverPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "decActiveCoverInETH",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "coverId",
+						"type": "uint256"
+					}
+				],
+				"name": "getCoverData",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "amountPaidOut",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "totalClaimAmount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "start",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "period",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "token0",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "token1",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "token0Qty",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "token1Qty",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lowerBoundRatio",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "upperBoundRatio",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "pairStr",
+								"type": "string"
+							}
+						],
+						"internalType": "struct CoverData",
+						"name": "coverData",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalActiveCoverInETH",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/interfaces/ICover.sol": "ICover"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/interfaces/ICover.sol": {
+			"keccak256": "0xabf8996a1f9ab2326c42ae297e55009904f4d8a19b0976865885ad4e8c6a529f",
+			"urls": [
+				"bzz-raw://66b1cd261e3b8709b05c4aea929e48a94401b3149ef61f16049a4c30f639edb3",
+				"dweb:/ipfs/QmZASEHARjc3UXZNxUihqoZXtTCv1kPr9dzDjpsYvYMnBb"
+			]
+		},
+		"contracts/interfaces/ICoverNFT.sol": {
+			"keccak256": "0x79d602e1cd332d73b59651d0af301a23071e4ca225097b24d80f9947393e2582",
+			"urls": [
+				"bzz-raw://a8b78909a6db032e68906729c03fb6e3b8183264fc34fe4009c4c0a598a00a7a",
+				"dweb:/ipfs/QmaGEKqDiifEftwiPbBEnaduhZzUwzEBbj89xEdzkx1iB7"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/IERC721.sol": {
+			"keccak256": "0x461586fb5e1bae7c8f20946eaac8063ba69175f52ce877d82a87fb797be459ae",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://15eac2a3d51e4084e4a30fed436652cc2e668c4c6ecc24e2cf11046d076e5ff9",
+				"dweb:/ipfs/Qmf659uCMzNkfxiCfopZVRe917j6DwanPXz3Q2JXLmgfUs"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0x39194d726021816f8a5f2b821574349a4884833cf841378dc8e6862e5f789ed6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://08cfffa942e4589c4d927db3fecfea998e9486ff41f48ee905fdda34d152a846",
+				"dweb:/ipfs/QmQKwHL48iBd5XzRAnSNnGBXo6Ykt22iADEReEusX1SQvK"
+			]
+		}
+	},
+	"version": 1
+}

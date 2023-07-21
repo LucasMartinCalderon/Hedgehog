@@ -1,0 +1,39 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Math operations with safety checks that revert on error",
+			"methods": {},
+			"title": "SafeMath"
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/token/external/OZSafeMath.sol": "OZSafeMath"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/token/external/OZSafeMath.sol": {
+			"keccak256": "0x526e7aff423fa1ee6cbdade80dc1f0a30c9267257279a4ce1c372259c6bfd828",
+			"urls": [
+				"bzz-raw://53bc2d4ceb62a12e0ba396f67e4311bac38981d4d9e7283e05f20ece9f4913ce",
+				"dweb:/ipfs/Qma4qCGvb4yc7XmcaRPhYhSrzMqGSA3jc9Qa7JhzzMiZAk"
+			]
+		}
+	},
+	"version": 1
+}

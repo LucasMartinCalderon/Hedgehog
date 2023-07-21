@@ -1,0 +1,289 @@
+{
+	"compiler": {
+		"version": "0.8.21+commit.d9974bed"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "hedhAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "coverNFTAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_master",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "claims",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "coverId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "coverOwner",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "payoutRedeemed",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "coverNFT",
+				"outputs": [
+					{
+						"internalType": "contract ICoverNFT",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "hedh",
+				"outputs": [
+					{
+						"internalType": "contract HEDHToken",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "lastClaimSubmissionOnCover",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "claimId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "exists",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "master",
+				"outputs": [
+					{
+						"internalType": "contract Master",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "coverId",
+						"type": "uint256"
+					}
+				],
+				"name": "redeemClaimPayout",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint32",
+						"name": "coverId",
+						"type": "uint32"
+					}
+				],
+				"name": "submitClaim",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "coverId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "coverOwner",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "payoutRedeemed",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct Claim",
+						"name": "claim",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/assessment/IndividualClaims.sol": "IndividualClaims"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Master.sol": {
+			"keccak256": "0x3d3184b9516122e6fb70e4b5d512b6a0219abe38c4792b9cbf382dbffb880c65",
+			"urls": [
+				"bzz-raw://e1bb612708fc4fd742569a13ff47a2b359e21044f201e7eb99316a25c648203a",
+				"dweb:/ipfs/QmZZwWpCLopjSVdjPNR1LxxrBXp7wFEgmqzYuQUQFh1z6J"
+			]
+		},
+		"contracts/assessment/IndividualClaims.sol": {
+			"keccak256": "0x13d15957b9b64630ce30e74a015097a9026dbf428b559881b12fee5daac2d916",
+			"urls": [
+				"bzz-raw://929ab9b6cfbb9e7936b4915d9ef7c36902421f22fbab04f171914a6607f0bbb0",
+				"dweb:/ipfs/QmPaix8EffeXV8fGwEzHw2bB1fEdFwTbN699qkLp9r7NRk"
+			]
+		},
+		"contracts/interfaces/IAssessment.sol": {
+			"keccak256": "0xebd17312bc0a14ea279b93c0e0a0b56fc5c37476086f8c4a51b146526702d25f",
+			"urls": [
+				"bzz-raw://df48e2687cb84c408b636e9fbb0878660c3e55bd4748273dc964c6b27b92ced7",
+				"dweb:/ipfs/QmRCj2V7aXBfvzLkQy7sXL9UescRPs3wUrCm9aNzxtFe2j"
+			]
+		},
+		"contracts/interfaces/ICover.sol": {
+			"keccak256": "0xabf8996a1f9ab2326c42ae297e55009904f4d8a19b0976865885ad4e8c6a529f",
+			"urls": [
+				"bzz-raw://66b1cd261e3b8709b05c4aea929e48a94401b3149ef61f16049a4c30f639edb3",
+				"dweb:/ipfs/QmZASEHARjc3UXZNxUihqoZXtTCv1kPr9dzDjpsYvYMnBb"
+			]
+		},
+		"contracts/interfaces/ICoverNFT.sol": {
+			"keccak256": "0x79d602e1cd332d73b59651d0af301a23071e4ca225097b24d80f9947393e2582",
+			"urls": [
+				"bzz-raw://a8b78909a6db032e68906729c03fb6e3b8183264fc34fe4009c4c0a598a00a7a",
+				"dweb:/ipfs/QmaGEKqDiifEftwiPbBEnaduhZzUwzEBbj89xEdzkx1iB7"
+			]
+		},
+		"contracts/interfaces/IIndividualClaims.sol": {
+			"keccak256": "0xd17042012a84ebc116df46f5023db65192b8d27c73ac3ba975a9ef9c0845dc05",
+			"urls": [
+				"bzz-raw://5cf1e15ae68af7b2d3db4ee05a5a1f13915f555cce334bfd7c14d73e0f76987b",
+				"dweb:/ipfs/QmPHtaGcZo3CDBGsugNhUkYNrb9nYMhccz27c4jJPAbiKg"
+			]
+		},
+		"contracts/interfaces/IPool.sol": {
+			"keccak256": "0x4f981cd82fa7f4289d185d8b5c307a7626328196619922bf638f0214bcd42f23",
+			"urls": [
+				"bzz-raw://6446bfc6a64d4ebfdc35a4757c7eaf735b80bc69d07021428b97d51ac11b63ea",
+				"dweb:/ipfs/QmXdu5Dtjj9eW2bCe3Q5VBEfMivRYxgPwMgwVLbUQgXRzp"
+			]
+		},
+		"contracts/token/HEDHToken.sol": {
+			"keccak256": "0x9de9f739f368f038809d28f0962bb954db9dff33874c8bbdae0415c97c944535",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://da0086e8869aee2c5685520f704d397e59cfc02d83f7a08de25aa4839c094033",
+				"dweb:/ipfs/QmTj6Tk1n3BYyuTm45zXQKS2e1g8CZXaDqwiNSKYUkfy9o"
+			]
+		},
+		"contracts/token/external/OZIERC20.sol": {
+			"keccak256": "0xf5d24d430607291d465477ae57c61e40405515ddb7f75283d2a6deaa39b85855",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://826cccad292dd41f022aa97b96f72baee5d4cdc6b1a09660d22fea0c9b5841d4",
+				"dweb:/ipfs/QmUnfucwVnfSiyQaMMS1RANH5vfR2LnuMonkydWGh4Lkpi"
+			]
+		},
+		"contracts/token/external/OZSafeMath.sol": {
+			"keccak256": "0x526e7aff423fa1ee6cbdade80dc1f0a30c9267257279a4ce1c372259c6bfd828",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://53bc2d4ceb62a12e0ba396f67e4311bac38981d4d9e7283e05f20ece9f4913ce",
+				"dweb:/ipfs/Qma4qCGvb4yc7XmcaRPhYhSrzMqGSA3jc9Qa7JhzzMiZAk"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/IERC721.sol": {
+			"keccak256": "0x461586fb5e1bae7c8f20946eaac8063ba69175f52ce877d82a87fb797be459ae",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://15eac2a3d51e4084e4a30fed436652cc2e668c4c6ecc24e2cf11046d076e5ff9",
+				"dweb:/ipfs/Qmf659uCMzNkfxiCfopZVRe917j6DwanPXz3Q2JXLmgfUs"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0x39194d726021816f8a5f2b821574349a4884833cf841378dc8e6862e5f789ed6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://08cfffa942e4589c4d927db3fecfea998e9486ff41f48ee905fdda34d152a846",
+				"dweb:/ipfs/QmQKwHL48iBd5XzRAnSNnGBXo6Ykt22iADEReEusX1SQvK"
+			]
+		}
+	},
+	"version": 1
+}

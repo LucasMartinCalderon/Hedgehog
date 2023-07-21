@@ -1,0 +1,64 @@
+{
+	"compiler": {
+		"version": "0.8.21+commit.d9974bed"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/interfaces/ICoverNFTDescriptor.sol": "ICoverNFTDescriptor"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/interfaces/ICoverNFTDescriptor.sol": {
+			"keccak256": "0x57062a5844550f53920b182c2ce5071f1028ec03b06e58c9db82a5c1140432fa",
+			"urls": [
+				"bzz-raw://c6a8faecb0992a829bb68552a5f9e68e22ce26ae2da10230e57cf06014b1dd12",
+				"dweb:/ipfs/QmY5jJ5HJxm8zLchXNd3AFz84WpJgccvY3GZqeNWVEMUJq"
+			]
+		}
+	},
+	"version": 1
+}

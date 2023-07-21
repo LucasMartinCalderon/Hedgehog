@@ -1,0 +1,46 @@
+{
+	"compiler": {
+		"version": "0.8.21+commit.d9974bed"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Simple library that defines min, max and babylonian sqrt functions",
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/libraries/Math.sol": "Math"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/libraries/Math.sol": {
+			"keccak256": "0x57f526a92c1f4d0de03da446b736d2e7688929e49353628cc7e23e93d81b49c9",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://172b2b8cf28838b698acb7e9927ece6898c62b9627470504051dbae0ce5945ce",
+				"dweb:/ipfs/QmZLHfcgt3fQz85h183rH96vkkAg9mDPXKfWV4ECCefn43"
+			]
+		}
+	},
+	"version": 1
+}

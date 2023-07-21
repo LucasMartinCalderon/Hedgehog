@@ -1,0 +1,94 @@
+{
+	"compiler": {
+		"version": "0.8.21+commit.d9974bed"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "minTokensOut",
+						"type": "uint256"
+					}
+				],
+				"name": "buyHEDH",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "minEthOut",
+						"type": "uint256"
+					}
+				],
+				"name": "sellHEDH",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "payoutAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "sendPayout",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/interfaces/IPool.sol": "IPool"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/interfaces/IPool.sol": {
+			"keccak256": "0x4f981cd82fa7f4289d185d8b5c307a7626328196619922bf638f0214bcd42f23",
+			"urls": [
+				"bzz-raw://6446bfc6a64d4ebfdc35a4757c7eaf735b80bc69d07021428b97d51ac11b63ea",
+				"dweb:/ipfs/QmXdu5Dtjj9eW2bCe3Q5VBEfMivRYxgPwMgwVLbUQgXRzp"
+			]
+		}
+	},
+	"version": 1
+}

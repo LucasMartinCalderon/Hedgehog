@@ -1,0 +1,133 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"calculateCover((uint256,uint256,uint256,uint256,address,address,uint256,uint256,uint256,uint256,string))": "bc12dfc4"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [
+				{
+					"components": [
+						{
+							"internalType": "uint256",
+							"name": "amountPaidOut",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "totalClaimAmount",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "start",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "period",
+							"type": "uint256"
+						},
+						{
+							"internalType": "address",
+							"name": "token0",
+							"type": "address"
+						},
+						{
+							"internalType": "address",
+							"name": "token1",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "token0Qty",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "token1Qty",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "lowerBoundRatio",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "upperBoundRatio",
+							"type": "uint256"
+						},
+						{
+							"internalType": "string",
+							"name": "pairStr",
+							"type": "string"
+						}
+					],
+					"internalType": "struct CoverData",
+					"name": "cd",
+					"type": "tuple"
+				}
+			],
+			"name": "calculateCover",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "claimValue",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		}
+	]
+}

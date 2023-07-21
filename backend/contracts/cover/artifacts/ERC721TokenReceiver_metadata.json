@@ -1,0 +1,112 @@
+{
+	"compiler": {
+		"version": "0.8.21+commit.d9974bed"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"name": "onERC721Received",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Based on (https://github.com/transmissions11/solmate/blob/main/src/tokens/ERC721.sol)",
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "A generic interface for a contract which properly accepts ERC721 tokens.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/cover/CoverNFT.sol": "ERC721TokenReceiver"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/cover/CoverNFT.sol": {
+			"keccak256": "0x3698247105ff7f2cd85d6c95f30c047f3c9ffea3319ee610931c30ce6303cde2",
+			"license": "AGPL-3.0-only",
+			"urls": [
+				"bzz-raw://3c3266c516a5f445fa01749cbbe3801a423b8b8ab6727c183117d24caba35bc6",
+				"dweb:/ipfs/QmQvDSXRsgkxVGDj3o5UL8XCur8Njqd8a7aN515a8wjhsZ"
+			]
+		},
+		"contracts/interfaces/ICoverNFT.sol": {
+			"keccak256": "0x79d602e1cd332d73b59651d0af301a23071e4ca225097b24d80f9947393e2582",
+			"urls": [
+				"bzz-raw://a8b78909a6db032e68906729c03fb6e3b8183264fc34fe4009c4c0a598a00a7a",
+				"dweb:/ipfs/QmaGEKqDiifEftwiPbBEnaduhZzUwzEBbj89xEdzkx1iB7"
+			]
+		},
+		"contracts/interfaces/ICoverNFTDescriptor.sol": {
+			"keccak256": "0x57062a5844550f53920b182c2ce5071f1028ec03b06e58c9db82a5c1140432fa",
+			"urls": [
+				"bzz-raw://c6a8faecb0992a829bb68552a5f9e68e22ce26ae2da10230e57cf06014b1dd12",
+				"dweb:/ipfs/QmY5jJ5HJxm8zLchXNd3AFz84WpJgccvY3GZqeNWVEMUJq"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/IERC721.sol": {
+			"keccak256": "0x461586fb5e1bae7c8f20946eaac8063ba69175f52ce877d82a87fb797be459ae",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://15eac2a3d51e4084e4a30fed436652cc2e668c4c6ecc24e2cf11046d076e5ff9",
+				"dweb:/ipfs/Qmf659uCMzNkfxiCfopZVRe917j6DwanPXz3Q2JXLmgfUs"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0x39194d726021816f8a5f2b821574349a4884833cf841378dc8e6862e5f789ed6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://08cfffa942e4589c4d927db3fecfea998e9486ff41f48ee905fdda34d152a846",
+				"dweb:/ipfs/QmQKwHL48iBd5XzRAnSNnGBXo6Ykt22iADEReEusX1SQvK"
+			]
+		}
+	},
+	"version": 1
+}
