@@ -1,0 +1,9 @@
+.logos {
+    border: white 1px solid;
+    border-radius: 3px;
+    padding: 2px;
+}
+
+.appbg {
+    background: linear-gradient(135deg,#000000 0%,#000000 20%, #610080 100%);
+}
