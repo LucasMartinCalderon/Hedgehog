@@ -19,7 +19,7 @@ docker buildx bake -f docker-bake.hcl -f docker-bake.override.hcl --load
 
 ## Running
 
-To start the application, execute the following command:
+To start the application, execute the following command (please note that it should be on a different terminal running):
 
 ```shell
 docker compose up
