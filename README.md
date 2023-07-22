@@ -35,7 +35,7 @@ Follow these steps to install the project for development and testing purposes:
 # Clone the repo
 
 ```bash
-git clone https://github.com/your-org/hedgehog.git
+git clone https://github.com/LucasMartinCalderon/hedgehog.git
 ```
 
 # Navigate into the project folder
