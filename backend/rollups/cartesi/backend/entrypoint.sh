@@ -12,4 +12,7 @@
 # specific language governing permissions and limitations under the License.
 
 set -e
+python3 -m venv myenv                                                   
+source myenv/bin/activate
+pip install -r requirements.txt --withlinks --no-cache-dir
 rollup-init python3 Hedgehog.py

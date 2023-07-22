@@ -5,7 +5,7 @@ import traceback
 import logging
 import requests
 import numpy as np
-import matplotlib.pyplot as plt
+
 
 logging.basicConfig(level="INFO")
 logger = logging.getLogger(__name__)
@@ -52,10 +52,6 @@ def monte_carlo_simulation():
 
     x = init_px * np.exp(np.random.randn(10000) * annual_vol * np.sqrt(period_u))
     payoffs = payoff(x)
-    
-    plt.scatter(x, payoffs)
-    plt.axlike(np.mean(payoffs))
-    plt.save_as('plot.png')
 
     return np.mean(payoffs)
 
