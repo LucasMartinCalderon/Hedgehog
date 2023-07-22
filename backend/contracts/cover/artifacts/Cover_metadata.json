@@ -97,6 +97,11 @@
 								"internalType": "string",
 								"name": "pairStr",
 								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "initialPoolPrice",
+								"type": "uint256"
 							}
 						],
 						"internalType": "struct BuyCoverParams",
@@ -158,6 +163,11 @@
 								"internalType": "string",
 								"name": "pairStr",
 								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "initialPoolPrice",
+								"type": "uint256"
 							}
 						],
 						"internalType": "struct BuyCoverParams",
@@ -245,6 +255,11 @@
 								"internalType": "string",
 								"name": "pairStr",
 								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "initialPoolPrice",
+								"type": "uint256"
 							}
 						],
 						"internalType": "struct BuyCoverParams",
@@ -342,6 +357,11 @@
 								"internalType": "string",
 								"name": "pairStr",
 								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "initialPoolPrice",
+								"type": "uint256"
 							}
 						],
 						"internalType": "struct CoverData",
@@ -516,17 +536,17 @@
 			]
 		},
 		"contracts/cover/Cover.sol": {
-			"keccak256": "0x9b0060326d79659fbc65b13f2f808381b7145abc1d1a7c2ea13c7a75663ccbcf",
+			"keccak256": "0x53107efefcff4067a406d9f1b3581807bc8d685277c1a2549d9c41f98a1816b5",
 			"urls": [
-				"bzz-raw://95892ec5b70cc7559be0b28073dd71636aad7bb092ee40bdbb33da253b9417cb",
-				"dweb:/ipfs/QmYBu6srf25QgKY9CNfuFrTCDS6aEKkF6PMY7gkzbkgbDK"
+				"bzz-raw://41be9f4e1c555721a1f68109632830dc8a6656ed01bb54c8ac16b3ba661fe491",
+				"dweb:/ipfs/QmSVMfESdzXACt3QAN7jREDy7QeyR1U7iYsRxdeZQP3bQg"
 			]
 		},
 		"contracts/interfaces/ICover.sol": {
-			"keccak256": "0x618e047fdc777235144edfe506efa4cf92b8d7078c625a1f6a35274ded18b539",
+			"keccak256": "0x19d03f7e84362ae7fe3dc52f5cc6e15a5de042405538966fcc5e5e441e1cc531",
 			"urls": [
-				"bzz-raw://1b6bbde4fd32cf465f535b0fa2d60c1a5d10a9d790ff55272d636fab8472d7d9",
-				"dweb:/ipfs/Qmbu29eAmxZ5ZYYLNH9J7SsVEsvmBp9AxLFsm6jMwSAtoK"
+				"bzz-raw://40e1b2e6a36d3d3f1f115c7cb2658d71462d6ea7f0c23377dacd0f227e9a5e5f",
+				"dweb:/ipfs/QmV9qZc4dXrX3sABnVdYfabu3gYyZR1TJJW7kLG6Rom2QX"
 			]
 		},
 		"contracts/interfaces/ICoverNFT.sol": {

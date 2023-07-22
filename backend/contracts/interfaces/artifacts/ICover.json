@@ -49,9 +49,9 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"buyCover((address,address,uint256,uint256,uint256,uint256,uint256,string))": "a71467a8",
+			"buyCover((address,address,uint256,uint256,uint256,uint256,uint256,uint256,string))": "f70572ed",
 			"coverDataCount()": "404730f4",
-			"coverPrice((address,address,uint256,uint256,uint256,uint256,uint256,string))": "6c57b95d",
+			"coverPrice((address,address,uint256,uint256,uint256,uint256,uint256,uint256,string))": "fce7d46c",
 			"decActiveCoverInETH(uint256)": "4b61a44b",
 			"getCoverData(uint256)": "00407d2a",
 			"totalActiveCoverInETH()": "ed3b657a"
@@ -100,6 +100,11 @@
 						{
 							"internalType": "uint256",
 							"name": "token0Qty",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "intialPoolPrice",
 							"type": "uint256"
 						},
 						{
@@ -174,6 +179,11 @@
 						{
 							"internalType": "uint256",
 							"name": "token0Qty",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "intialPoolPrice",
 							"type": "uint256"
 						},
 						{
@@ -276,6 +286,11 @@
 						{
 							"internalType": "uint256",
 							"name": "token1Qty",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "initialPoolPrice",
 							"type": "uint256"
 						},
 						{

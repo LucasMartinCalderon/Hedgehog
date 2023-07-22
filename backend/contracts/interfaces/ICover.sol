@@ -2,14 +2,15 @@ pragma solidity >=0.5.0;
 import "./ICoverNFT.sol";
 
 struct BuyCoverParams {
-    address token0;
-    address token1;
+    address token0; // eth address
+    address token1; // pool address
     uint token1Qty;
     uint token0Qty;
     uint lowerBoundRatio;
     uint upperBoundRatio;
     uint period;
     string pairStr;
+    uint initialPoolPrice;
 }
 
 struct CoverData {
@@ -22,9 +23,11 @@ struct CoverData {
     address token1;
     uint256 token0Qty;
     uint256 token1Qty;
+
     uint256 lowerBoundRatio;
     uint256 upperBoundRatio;
     string pairStr;
+    uint initialPoolPrice;
 }
 
 

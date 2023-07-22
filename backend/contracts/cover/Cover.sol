@@ -45,7 +45,8 @@ contract Cover is ICover{
             params.token1Qty,
             params.lowerBoundRatio,
             params.upperBoundRatio,
-            params.pairStr
+            params.pairStr,
+            params.initialPoolPrice
         );
         uint premiumToPay = coverPrice(params);
         retrievePayment(premiumToPay,ETH_ASSET_ID);
@@ -57,10 +58,11 @@ contract Cover is ICover{
     function coverDataCount() public view returns (uint ){
         return coverNFT.totalSupply();
     }
-    function coverAmountInETH(BuyCoverParams calldata params) public returns (uint amount){
+    function coverAmountInETH(BuyCoverParams calldata params) public  returns (uint amount){
         return 1000000000000;
     }
     function coverPrice(BuyCoverParams calldata params) public returns (uint price){
+         
         return 1000000000000;
     } // oracle is not involved
     function retrievePayment(uint premiumInPaymentAsset, uint paymentAsset) internal returns (bool success){
