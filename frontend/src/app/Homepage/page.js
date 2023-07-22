@@ -389,105 +389,23 @@ export default function Home(props) {
 
   },[data])
 
-  // const { config } = usePrepareContractWrite({
-  //   address: '0xf25a91E4042BD119Ac55830158B911eA535a27c9',
-  //   abi: coverJson.abi,
-  //   functionName: 'buyCover',
-  //   args: [
-  //     ["0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e", // eth address token 0
-  //     "0x04b1560f4f58612a24cf13531f4706c817e8a5fe", // pool address token 1
-  //     // Number(tokenTwoQty) % 1 !== 0 ? parseInt(tokenTwoQty) * Math.pow(10, 18) : tokenTwoQty * Math.pow(10, 18),
-  //     // Number(tokenOneQty) % 1 !== 0 ? parseInt(tokenOneQty) * Math.pow(10, 18) : tokenOneQty * Math.pow(10, 18),
-  //     `${3_523}`,
-  //     `${2_000}`,
-  //     // lowerBound * Math.pow(10, 18),
-  //     // upperBound * Math.pow(10, 18),
-  //     `${1_000}`,
-  //     `${2_000}`,
-  //     (validPeriod * 60 * 60 * 24).toString(),
-  //     "USDC/WETH",
-  //     Number(data) % 1 !== 0 ? parseInt(data) * Math.pow(10, 18) : parseInt(data.toString()),
-  //   ]],
-  //   // onSettled: (settledData, error) => {
-  //   //   console.log('Settled', { settledData, error });
-  //   // },
-  // })
   const {write} = useContractWrite({
-    address: '0xeC2ADc459a05173C22Be6D30975bf3F7Ac2EE849',
+    address: '0x61d2408168aC3ab91663EB945A53237109768165',
     abi: coverJson.abi,
     functionName: 'buyCover',
-    args:[["0xf25a91E4042BD119Ac55830158B911eA535a27c9","0x04b1560f4f58612a24cf13531f4706c817e8a5fe",1,1,1,1,1,"1",1]]
+    args:[[
+      "0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e", // eth address token 0
+      "0x04b1560f4f58612a24cf13531f4706c817e8a5fe", // pool address token 1
+      (Number(tokenTwoQty) % 1 !== 0 ? parseInt(tokenTwoQty) * Math.pow(10, 18) : tokenTwoQty * Math.pow(10, 18)),
+      (Number(tokenOneQty) % 1 !== 0 ? parseInt(tokenOneQty) * Math.pow(10, 18) : tokenOneQty * Math.pow(10, 18)),
+      (lowerBound * Math.pow(10, 18)),
+      (upperBound * Math.pow(10, 18)),
+      (validPeriod * 60 * 60 * 24),
+      "USDC/WETH",
+      (Number(data) % 1 !== 0 ? parseInt(data) * Math.pow(10, 18) : parseInt(data.toString())),
+    ]],
+    value: parseEther(`${premium /(Number(BigInt(data)) / 100000000)}`),
   });
-
-  // console.log("config: ", config);
-
-  console.log("all parameter : ", 
-    ["0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e", // eth address token 0
-    "0x04b1560f4f58612a24cf13531f4706c817e8a5fe", // pool address token 1
-      // Number(tokenTwoQty) % 1 !== 0 ? parseInt(tokenTwoQty) * Math.pow(10, 18) : tokenTwoQty * Math.pow(10, 18),
-      // Number(tokenOneQty) % 1 !== 0 ? parseInt(tokenOneQty) * Math.pow(10, 18) : tokenOneQty * Math.pow(10, 18),
-      3_523_543_000_000_000_000,
-      2_000_000_000_000_000_000,
-      // lowerBound * Math.pow(10, 18),
-      // upperBound * Math.pow(10, 18),
-      1_000_000_000_000_000_000,
-      2_000_000_000_000_000_000,
-    (validPeriod * 60 * 60 * 24),
-    "USDC/WETH",
-    Number(data) % 1 !== 0 ? parseInt(data) * Math.pow(10, 18) : parseInt(data.toString()),
-  ]);
-
-  // const { data: buyData, isLoading: isLoadingBuy, isSuccess: isSuccessBuy, write, isError: isErrorBuy } = useContractWrite({
-  //   address: '0xf25a91E4042BD119Ac55830158B911eA535a27c9',
-  //   abi: coverJson.abi,
-  //   functionName: 'buyCover',
-  //   args: [
-  //     ["0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e", // eth address token 0
-  //     "0x04b1560f4f58612a24cf13531f4706c817e8a5fe", // pool address token 1
-  //     // Number(tokenTwoQty) % 1 !== 0 ? parseInt(tokenTwoQty) * Math.pow(10, 18) : tokenTwoQty * Math.pow(10, 18),
-  //     // Number(tokenOneQty) % 1 !== 0 ? parseInt(tokenOneQty) * Math.pow(10, 18) : tokenOneQty * Math.pow(10, 18),
-  //     `${3_523}`,
-  //     `${2_000}`,
-  //     // lowerBound * Math.pow(10, 18),
-  //     // upperBound * Math.pow(10, 18),
-  //     `${1_000}`,
-  //     `${2_000}`,
-  //     (validPeriod * 60 * 60 * 24).toString(),
-  //     "USDC/WETH",
-  //     Number(data) % 1 !== 0 ? parseInt(data) * Math.pow(10, 18) : parseInt(data.toString()),
-  //   ]],
-  //   // args: [{
-  //   //   token0: "0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e", // eth address token 0
-  //   //   token1: "0x04b1560f4f58612a24cf13531f4706c817e8a5fe", // pool address token 1
-  //   //   token1Qty: Number(tokenTwoQty) % 1 !== 0 ? parseInt(tokenTwoQty) * Math.pow(10, 18) : tokenTwoQty,
-  //   //   token0Qty: Number(tokenOneQty) % 1 !== 0 ? parseInt(tokenOneQty) * Math.pow(10, 18) : tokenOneQty,
-  //   //   lowerBoundRatio: lowerBound,
-  //   //   upperBoundRatio: upperBound,
-  //   //   period: (validPeriod * 60 * 60 * 24),
-  //   //   pairStr: "ETH/WETH",
-  //   //   initialPoolPrice: Number(data) % 1 !== 0 ? parseInt(data) * Math.pow(10, 18) : data,
-  //   // }],
-
-  //   // args: [
-  //   //   ["0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e", // eth address token 0
-  //   //   "0x04b1560f4f58612a24cf13531f4706c817e8a5fe", // pool address token 1
-  //   //   // Number(tokenTwoQty) % 1 !== 0 ? parseInt(tokenTwoQty) * Math.pow(10, 18) : tokenTwoQty * Math.pow(10, 18),
-  //   //   // Number(tokenOneQty) % 1 !== 0 ? parseInt(tokenOneQty) * Math.pow(10, 18) : tokenOneQty * Math.pow(10, 18),
-  //   //   3_523_543_000_000_000_000,
-  //   //   2_000_000_000_000_000_000,
-  //   //   // lowerBound * Math.pow(10, 18),
-  //   //   // upperBound * Math.pow(10, 18),
-  //   //   1_000_000_000_000_000_000_000,
-  //   //   2_000_000_000_000_000_000_000,
-  //   //   (validPeriod * 60 * 60 * 24),
-  //   //   "USDC/WETH",
-  //   //   Number(data) % 1 !== 0 ? parseInt(data) * Math.pow(10, 18) : parseInt(data.toString()),
-  //   // ]],
-  //   onSettled: (settledData, error) => {
-  //     console.log("initialPoolPrice : ", Number(data) % 1 !== 0 ? parseInt(data) * Math.pow(10, 18) : data);
-  //     console.log('Settled', { settledData, error });
-  //   },
-  // })
   
   const handlePremiumPurchase = () => {
     handleNext()
@@ -713,43 +631,7 @@ export default function Home(props) {
                 </Button>&nbsp;
                 <Button disabled={!write} onClick={() => {
                   handlePremiumPurchase()
-                  console.log("parseEther(`${premium /(Number(BigInt(data)) / 100000000)}`) : ", parseEther(`${premium /(Number(BigInt(data)) / 100000000)}`));
-                  console.log("array arg: ", [
-                    ["0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e", // eth address token 0
-                    "0x04b1560f4f58612a24cf13531f4706c817e8a5fe", // pool address token 1
-                    // Number(tokenTwoQty) % 1 !== 0 ? parseInt(tokenTwoQty) * Math.pow(10, 18) : tokenTwoQty * Math.pow(10, 18),
-                    // Number(tokenOneQty) % 1 !== 0 ? parseInt(tokenOneQty) * Math.pow(10, 18) : tokenOneQty * Math.pow(10, 18),
-                    `${3_523}`,
-                    `${2_000}`,
-                    // lowerBound * Math.pow(10, 18),
-                    // upperBound * Math.pow(10, 18),
-                    `${1_000}`,
-                    `${2_000}`,
-                    (validPeriod * 60 * 60 * 24).toString(),
-                    "USDC/WETH",
-                    Number(data) % 1 !== 0 ? (parseInt(data) * Math.pow(10, 18)).toString() : data.toString(),
-                  ]]);
                   write?.();
-                  // write?.({
-                  //     from: `${address}`,
-                  //     // value: parseEther(`${premium /(Number(BigInt(data)) / 100000000)}`),
-                  //     value: parseEther(`0.0007`),
-                  //     args: [
-                  //       ["0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e", // eth address token 0
-                  //       "0x04b1560f4f58612a24cf13531f4706c817e8a5fe", // pool address token 1
-                  //       // Number(tokenTwoQty) % 1 !== 0 ? parseInt(tokenTwoQty) * Math.pow(10, 18) : tokenTwoQty * Math.pow(10, 18),
-                  //       // Number(tokenOneQty) % 1 !== 0 ? parseInt(tokenOneQty) * Math.pow(10, 18) : tokenOneQty * Math.pow(10, 18),
-                  //       `${3_523}`,
-                  //       `${2_000}`,
-                  //       // lowerBound * Math.pow(10, 18),
-                  //       // upperBound * Math.pow(10, 18),
-                  //       `${1_000}`,
-                  //       `${2_000}`,
-                  //       (validPeriod * 60 * 60 * 24).toString(),
-                  //       "USDC/WETH",
-                  //       Number(data) % 1 !== 0 ? parseInt(data) * Math.pow(10, 18) : parseInt(data.toString()),
-                  //     ]],
-                  // })
                 }} variant="contained">Confirm Premium Purchase</Button>
                 <br/><br/>
                 <Typography id="explanation"><i>{`This will mint an NFT. The NFT can be used to claim protection on a later date.`}</i></Typography>

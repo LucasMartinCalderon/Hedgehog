@@ -17,7 +17,8 @@ import PropTypes from 'prop-types';
 import hedgeHogNFT from './hedgehogToken.json'
 import mcr from './mcr.json'
 import hedgehogPool from './hedgehogPool.json'
-import { useContractWrite, usePrepareContractWrite } from 'wagmi'
+import coverNFT from './coverNFT.json'
+import { useContractWrite, usePrepareContractWrite, useContractReads } from 'wagmi'
 import { parseEther } from 'viem'
 
 // import "@glideapps/glide-data-grid/dist/index.css";
@@ -238,9 +239,9 @@ export default function Fundings() {
     address: '0x77823013F087c737E6D8d8736745859356d10026',
   })
 
-  const { data: hedgeTokenSupply, isError: errorHedgeTokenSupply, isLoading: getTokenSupplyLoading } = useContractRead({
-    address: '0x860B45b7d1aF4499F9a9B17bd27764e3b503d130',
-    abi: hedgeHogNFT.abi,
+  const { data: coverNFTSupply, isError: errorCoverNFTSupply, isLoading: getTokenSupplyLoading } = useContractRead({
+    address: '0xc49646bF12957B2F12d00512DF20B33047851D3D',
+    abi: coverNFT.abi,
     functionName: 'totalSupply',
   })
 
@@ -256,6 +257,28 @@ export default function Fundings() {
     functionName: 'getHEDHForEth',
     args: [tokenFundedValue]
   })
+  console.log("coverNFTSupply: ",coverNFTSupply)
+  const { data: ownerTokenURLSupply, isError: errorownerTokenURLSupply, isLoading: getOwnerTokenURLLoading } = useContractReads({
+    
+    contracts: Array.from({length: Number(coverNFTSupply)}, (_, index) => {
+      return {
+        address: '0xc49646bF12957B2F12d00512DF20B33047851D3D',
+        abi: coverNFT.abi,
+        functionName: 'ownerOf',
+        args: [index+1]
+      }
+    })
+  })
+
+
+  const { data: hedgeTokenSupply, isError: errorHedgeTokenSupply, isLoading: gethTokenSupplyLoading } = useContractRead({
+    address: '0x860B45b7d1aF4499F9a9B17bd27764e3b503d130',
+    abi: hedgeHogNFT.abi,
+    functionName: 'totalSupply',
+  })
+
+  console.log("ownerTokenURLSupply,errorownerTokenURLSupply,getOwnerTokenURLLoading, : ", ownerTokenURLSupply,errorownerTokenURLSupply,getOwnerTokenURLLoading,);
+
 
   useEffect(() => {
 
@@ -274,9 +297,6 @@ export default function Fundings() {
       setTokenFundedValue(ethFundedValue)
     }
 
-    console.log("hedgeTokenSupply, errorHedgeTokenSupply, getTokenSupplyLoading : ", hedgeTokenSupply, errorHedgeTokenSupply, getTokenSupplyLoading);
-
-    
     if (hedgeTokenSupply) {
       const hedgeTokenFloatVal = Number(hedgeTokenSupply);
       const stringValHedTokenSupply = hedgeTokenFloatVal.toFixed(0); 
@@ -307,19 +327,32 @@ export default function Fundings() {
     console.log("hTokenPriceSuppl, errorHTokenPrice, getTokenPriceLoading : ", hTokenPrice, errorHTokenPrice, getTokenPriceLoading);
 
   }, [ethFunded, errorGetEthFunded, getEthIsLoading, 
-    hedgeTokenSupply, errorHedgeTokenSupply, getTokenSupplyLoading,
+    coverNFTSupply, errorCoverNFTSupply, getTokenSupplyLoading,
     mcrData, errormcrData, getMcrDataLoading,
-    hTokenPrice, errorHTokenPrice, getTokenPriceLoading
+    hTokenPrice, errorHTokenPrice, getTokenPriceLoading,
+    hedgeTokenSupply, errorHedgeTokenSupply, getTokenSupplyLoading,
   ])
 
+  // BUY Hedgehog TOKEN
   const { config } = usePrepareContractWrite({
     address: '0x77823013F087c737E6D8d8736745859356d10026',
     abi: hedgehogPool.abi,
     functionName: 'buyHEDH',
-    args: [1]
+    args: [0]
   })
+
   const { address, connector, isConnected } = useAccount()
   const { data, isLoading, isSuccess, write } = useContractWrite(config)
+
+  // SELL X TOKEN
+  const { config: sellConfig } = usePrepareContractWrite({
+    address: '0x77823013F087c737E6D8d8736745859356d10026',
+    abi: hedgehogPool.abi,
+    functionName: 'sellHEDH',
+    args: [xTokenAmount, 0]
+  })
+
+  const { data: sellData, isLoading: sellisLoading, isSuccess: sellisSuccess, write: sellWrite } = useContractWrite(sellConfig)
 
 
   return (
@@ -338,7 +371,7 @@ export default function Fundings() {
       </Grid>
       <Grid item xs={4}>
         <Typography variant="h5">
-          {`Current Xtoken Price : ${totalHedgeTokenPrice}`}
+          {`Current Xtoken Price : ${totalHedgeTokenPrice / Math.pow(10,18)}`}
         </Typography>
       </Grid>
     </Grid>
@@ -349,7 +382,7 @@ export default function Fundings() {
             <StyledTab label="Sell" {...a11yProps(1)} />
           </Tabs>
         </Box>
-        {/* Buy XToken */}
+        {/* Buy Hedgehog Token */}
         <CustomTabPanel value={value} index={0}>
           <Grid container spacing={3}>
               <Grid item xs={12}>
@@ -357,36 +390,33 @@ export default function Fundings() {
                     fullWidth
                     type="number"
                     id="xtoken-amount"
-                    label="XToken Amount"
+                    label="WEI Amount"
                     InputLabelProps={{
                         shrink: true,
                     }}
                     value={xTokenAmount}
                     onChange={(event) => {
-                      setXTokenAmount(parseFloat(event.target.value));
+                      setXTokenAmount(parseInt(event.target.value));
                       // x100_000_000 before submit
                     }}
                 />
               </Grid>
               <Grid item xs={12}>
-                <Typography>
-                  {`{ETH Needed here}`}
-                </Typography>
-              </Grid>
-              <Grid item xs={12}>
                 <Button variant="contained" onClick={() => {
-                  write({
-                    args: [1],
+                  console.log("xTokenAmount BUY: ", xTokenAmount);
+                  write?.({
+                    args: [0],
                     from: `${address}`,
-                    value: parseEther('0.00007'),
+                    // value: parseEther(`${xTokenAmount}`),
+                    overrides: {value: parseEther(`${xTokenAmount}`)}
                   })
                 }}>
-                  Buy XToken
+                  Buy Hedgehog Token
                 </Button>
               </Grid>
           </Grid>
         </CustomTabPanel>
-        {/* Sell XToken */}
+        {/* Sell Hedgehog Token */}
         <CustomTabPanel value={value} index={1}>
         <Grid container spacing={3}>
               <Grid item xs={12}>
@@ -394,7 +424,7 @@ export default function Fundings() {
                     fullWidth
                     type="number"
                     id="xtoken-amount"
-                    label="XToken Amount"
+                    label="Hedgehog Token Amount"
                     InputLabelProps={{
                         shrink: true,
                     }}
@@ -406,13 +436,21 @@ export default function Fundings() {
                 />
               </Grid>
               <Grid item xs={12}>
-                <Typography>
+                {/* <Typography>
                   {`{ETH Receive here}`}
-                </Typography>
+                </Typography> */}
               </Grid>
               <Grid item xs={12}>
-                <Button variant="contained">
-                  Sell XToken
+                <Button 
+                  variant="contained"
+                  onClick={() => {
+                    // HERE
+                    sellWrite?.({
+                      args: [xTokenAmount, 0],
+                    })
+                  }}
+                >
+                  Sell Hedgehog Token
                 </Button>
               </Grid>
           </Grid>

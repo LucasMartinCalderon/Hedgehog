@@ -12,9 +12,9 @@ import CryptoJS from 'crypto-js';
 import ReactEcharts from "echarts-for-react"
 // import DataEditor from "@glideapps/glide-data-grid";
 import { LineChart } from '@mui/x-charts/LineChart';
-
+import { useContractRead, useContractReads, useAccount } from 'wagmi'
 import PropTypes from 'prop-types';
-
+import coverNFT from './coverNFT.json'
 
 // import "@glideapps/glide-data-grid/dist/index.css";
 
@@ -210,6 +210,31 @@ export default function Premiums() {
   const [upperBound, setUpperBound] = React.useState(0);
   const [validPeriod, setValidPeriod] = React.useState(0);
   const [tokenOneQty, setTokenOneQty] = React.useState(0);
+  const [nfts, setNfts] = useState([]);
+
+  const { data: coverNFTSupply, isError: errorCoverNFTSupply, isLoading: getTokenSupplyLoading } = useContractRead({
+    address: '0xc49646bF12957B2F12d00512DF20B33047851D3D',
+    abi: coverNFT.abi,
+    functionName: 'totalSupply',
+  })
+
+  console.log("coverNFTSupply : ", coverNFTSupply);
+
+  const { data: ownerTokenURLSupply, isError: errorownerTokenURLSupply, isLoading: getOwnerTokenURLLoading } = useContractReads({
+    
+    contracts: Array.from({length: Number(coverNFTSupply)}, (_, index) => {
+      return {
+        address: '0xc49646bF12957B2F12d00512DF20B33047851D3D',
+        abi: coverNFT.abi,
+        functionName: 'ownerOf',
+        args: [index+1]
+      }
+    })
+  })
+
+  console.log("ownerTokenURLSupply :L ", ownerTokenURLSupply);
+
+  
 
   const handlePremiumModalOpen = (eachPool) => {
     setSelectedPool(eachPool)
@@ -224,6 +249,13 @@ export default function Premiums() {
     setValue(newValue);
   };
 
+  useEffect(()=> {
+    console.log("refresh : ", ownerTokenURLSupply);
+    setNfts(ownerTokenURLSupply);
+  },[ownerTokenURLSupply])
+
+  const { address, connector, isConnected } = useAccount()
+
 
   return (
     <Slide direction="up" in={true} mountOnEnter unmountOnExit>
@@ -231,36 +263,20 @@ export default function Premiums() {
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <StyledTab label="Buy Premiums" {...a11yProps(0)} />
           <StyledTab label="Claim Protections" {...a11yProps(1)} />
         </Tabs>
       </Box>
-      {/* Premiums */}
-      <CustomTabPanel value={value} index={0}>
-        {
-          ["Pool 1", "Pool 2", "Pool 3"].map((eachPool, index) => {
-            return <StyledPaper 
-                    sx={{margin: '1em', }} 
-                    elevation={3} 
-                    key={`pool-${index}`}
-                    onClick={() => {handlePremiumModalOpen(eachPool)}}
-                >
-              {`${eachPool}`}
-              test
-            </StyledPaper>
-          })
-        }
-      </CustomTabPanel>
       {/* Claims */}
-      <CustomTabPanel value={value} index={1}>
+      <CustomTabPanel value={value} index={0}>
         <Grid container spacing={3}>
           {
-            ["Claim 1", "Claim 2", "Claim 3", "Claim 4", "Claim 5", "Claim 6"].map((eachPool, index) => {
+            nfts &&  nfts.length && nfts.map((eachPool, index) => {
+              if (eachPool && eachPool.result !== `${address}`) return ''
               return <Grid item xs={4} key={`claim-${index}`}><StyledPaper 
                       sx={{margin: '1em', }} 
                       elevation={3} 
                   >
-                <div>{`${eachPool}`}</div>
+                <div>{`Claim ${index + 1}`}</div>
                 <br/><br/>
                 <div><Button variant='contained'>Claim</Button></div>
               </StyledPaper></Grid>
