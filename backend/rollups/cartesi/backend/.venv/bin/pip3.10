@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #!/Users/lucasmartin/Desktop/Hedgehog/backend/rollups/cartesi/backend/.venv/bin/python3
+=======
+#!/Users/luchenghao/Documents/Workspace/blockchainProjects/Hedgehog/backend/rollups/cartesi/backend/.venv/bin/python3
+>>>>>>> eae3e4a8220070a5dadf8329f57893371a4b0b81
 # -*- coding: utf-8 -*-
 import re
 import sys

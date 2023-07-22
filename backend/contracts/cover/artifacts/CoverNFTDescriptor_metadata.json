@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.21+commit.d9974bed"
+		"version": "0.8.19+commit.7dd6d404"
 	},
 	"language": "Solidity",
 	"output": {
@@ -221,7 +221,7 @@
 		"compilationTarget": {
 			"contracts/cover/CoverNFTDescriptor.sol": "CoverNFTDescriptor"
 		},
-		"evmVersion": "shanghai",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -249,10 +249,10 @@
 			]
 		},
 		"contracts/interfaces/ICover.sol": {
-			"keccak256": "0xabf8996a1f9ab2326c42ae297e55009904f4d8a19b0976865885ad4e8c6a529f",
+			"keccak256": "0x618e047fdc777235144edfe506efa4cf92b8d7078c625a1f6a35274ded18b539",
 			"urls": [
-				"bzz-raw://66b1cd261e3b8709b05c4aea929e48a94401b3149ef61f16049a4c30f639edb3",
-				"dweb:/ipfs/QmZASEHARjc3UXZNxUihqoZXtTCv1kPr9dzDjpsYvYMnBb"
+				"bzz-raw://1b6bbde4fd32cf465f535b0fa2d60c1a5d10a9d790ff55272d636fab8472d7d9",
+				"dweb:/ipfs/Qmbu29eAmxZ5ZYYLNH9J7SsVEsvmBp9AxLFsm6jMwSAtoK"
 			]
 		},
 		"contracts/interfaces/ICoverNFT.sol": {
@@ -278,11 +278,11 @@
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/IERC721.sol": {
-			"keccak256": "0x461586fb5e1bae7c8f20946eaac8063ba69175f52ce877d82a87fb797be459ae",
+			"keccak256": "0x55036158b0f3523fa36f2a576743f39dd46bb84bee57e51cd2406c906638cea2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://15eac2a3d51e4084e4a30fed436652cc2e668c4c6ecc24e2cf11046d076e5ff9",
-				"dweb:/ipfs/Qmf659uCMzNkfxiCfopZVRe917j6DwanPXz3Q2JXLmgfUs"
+				"bzz-raw://9c5558c241a34b3fa54c848d99844850c88b03869b47e1fc05f6f261c54aaa35",
+				"dweb:/ipfs/QmbeeMn9RKhT8DmEvDCNdfiDGtDw1YVB2D5HTLqTzefYPb"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/introspection/IERC165.sol": {

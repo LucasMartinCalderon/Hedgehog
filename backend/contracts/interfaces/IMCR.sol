@@ -1,4 +1,4 @@
 interface IMCR{
-    function getMCR() external returns (uint);
+    function getMCR() view external returns (uint);
     function updateMCRInternal() external;
 }

@@ -24,7 +24,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/util/Base.sol": "Base64"
+			"contracts/utils/Base64.sol": "Base64"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -38,7 +38,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/util/Base.sol": {
+		"contracts/utils/Base64.sol": {
 			"keccak256": "0xcee2c4a3bfa88f75b67c0d22b146135db04cb8c9bfc454243cc59c354081d1a9",
 			"license": "MIT",
 			"urls": [

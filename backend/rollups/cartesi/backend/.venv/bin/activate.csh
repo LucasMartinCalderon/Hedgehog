@@ -8,7 +8,11 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
+<<<<<<< HEAD
 setenv VIRTUAL_ENV "/Users/lucasmartin/Desktop/Hedgehog/backend/rollups/cartesi/backend/.venv"
+=======
+setenv VIRTUAL_ENV "/Users/luchenghao/Documents/Workspace/blockchainProjects/Hedgehog/backend/rollups/cartesi/backend/.venv"
+>>>>>>> eae3e4a8220070a5dadf8329f57893371a4b0b81
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/bin:$PATH"

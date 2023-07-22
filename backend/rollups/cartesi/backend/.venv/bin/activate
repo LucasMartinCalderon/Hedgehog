@@ -38,7 +38,11 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
+<<<<<<< HEAD
 VIRTUAL_ENV="/Users/lucasmartin/Desktop/Hedgehog/backend/rollups/cartesi/backend/.venv"
+=======
+VIRTUAL_ENV="/Users/luchenghao/Documents/Workspace/blockchainProjects/Hedgehog/backend/rollups/cartesi/backend/.venv"
+>>>>>>> eae3e4a8220070a5dadf8329f57893371a4b0b81
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

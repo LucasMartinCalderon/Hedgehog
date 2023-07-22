@@ -17,7 +17,7 @@ struct CoverData {
   uint256 totalClaimAmount;
   uint256 start;
   uint256 period; // seconds
-
+ 
     address token0;
     address token1;
     uint256 token0Qty;

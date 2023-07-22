@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.21+commit.d9974bed"
+		"version": "0.8.18+commit.87f61d96"
 	},
 	"language": "Solidity",
 	"output": {
@@ -614,7 +614,7 @@
 		"compilationTarget": {
 			"contracts/token/HEDHToken.sol": "HEDHToken"
 		},
-		"evmVersion": "shanghai",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -627,11 +627,11 @@
 	},
 	"sources": {
 		"contracts/token/HEDHToken.sol": {
-			"keccak256": "0x9de9f739f368f038809d28f0962bb954db9dff33874c8bbdae0415c97c944535",
+			"keccak256": "0xc59d84572f0b53d119f3666ddafb678213d7d39044515bfe950e87c196be27d6",
 			"license": "GPL-3.0-only",
 			"urls": [
-				"bzz-raw://da0086e8869aee2c5685520f704d397e59cfc02d83f7a08de25aa4839c094033",
-				"dweb:/ipfs/QmTj6Tk1n3BYyuTm45zXQKS2e1g8CZXaDqwiNSKYUkfy9o"
+				"bzz-raw://2547cd58c4f76514623eb221614c0e67e6f6c2f97124d747b37b6f8e01a95e84",
+				"dweb:/ipfs/QmXHARLCX957xoofSAMgTzktMbnEXQsCEkgGFf7188uc57"
 			]
 		},
 		"contracts/token/external/OZIERC20.sol": {

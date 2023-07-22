@@ -2,6 +2,10 @@ pragma solidity ^0.8.*;
 import "../interfaces/ICover.sol";
 import "../Master.sol";
 import "../interfaces/IPool.sol";
+import "../interfaces/IMCR.sol";
+
+import "@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol";
+import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 // Task 1: input spec, display price, pay to mint a CoverNFT and list CoverNFTs 
 
 uint32 constant ETH_ASSET_ID = 0;
@@ -15,6 +19,7 @@ contract Cover is ICover{
     uint256 public activeCoverAmount ;
     Master public master;
     ICoverNFT public  coverNFT;
+
     constructor(
         ICoverNFT _coverNFT,
         address masterAddress
@@ -45,6 +50,9 @@ contract Cover is ICover{
         uint premiumToPay = coverPrice(params);
         retrievePayment(premiumToPay,ETH_ASSET_ID);
         activeCoverAmount += _coverData[coverId].totalClaimAmount;
+        IMCR mcr = IMCR(master.MCRAddress());
+        mcr.updateMCRInternal();
+
     }
     function coverDataCount() public view returns (uint ){
         return coverNFT.totalSupply();
@@ -106,5 +114,13 @@ contract Cover is ICover{
         return IPool(master.PoolAddress());
     }
 
+    function getLiveDataUniswap(address x) public view returns (uint160){
+          (uint160 sqrtPX, , , , , , ) = IUniswapV3Pool(x).slot0();
+          return sqrtPX;
+    }
   
+    function getUnitPX(address x) public view returns (int){
+        (,int unitPX,,,)= AggregatorV3Interface(x).latestRoundData();
+        return unitPX;
+    }
   }
