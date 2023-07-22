@@ -2,6 +2,7 @@ pragma solidity ^0.8.*;
 
 import "../interfaces/IAssessment.sol";
 import "../interfaces/ICover.sol";
+import "../interfaces/IMCR.sol";
 import "../interfaces/IPool.sol";
 import "../interfaces/ICoverNFT.sol";
 import "../interfaces/IIndividualClaims.sol";
@@ -49,6 +50,8 @@ contract IndividualClaims is IIndividualClaims{
         claims.push(c);
         ICover cover = cover();
         cover.decActiveCoverInETH(cover.getCoverData(coverId).totalClaimAmount);
+        IMCR mcr = IMCR(master.MCRAddress());
+        mcr.updateMCRInternal();
         return c;
     }
 

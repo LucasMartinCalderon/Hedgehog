@@ -62,9 +62,8 @@ contract MCR is IMCR {
    *
    * @return mcr
    */
-  function getMCR() public returns (uint) {
+  function getMCR() public view returns (uint) {
     
-    _updateMCR();
     // uint basisPointsAdjustment = _maxMCRIncrement * (block.timestamp - _lastUpdateTime) / 1 days;
     // basisPointsAdjustment = Math.min(basisPointsAdjustment, MAX_MCR_ADJUSTMENT);
 

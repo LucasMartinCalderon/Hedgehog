@@ -69,7 +69,7 @@ contract Pool is IPool {
         uint totalAssetValue = address(this).balance - ethIn;
         IMCR _mcr = mcr();
         uint mcrEth = _mcr.getMCR();
-        uint mcrRatio = calculateMCRRatio(totalAssetValue, mcrEth);
+        // uint mcrRatio = calculateMCRRatio(totalAssetValue, mcrEth);
 
         // require(mcrRatio <= MAX_MCR_RATIO, "Pool: Cannot purchase if MCR% > 400%");
         uint tokensOut = calculateHEDHForEth(ethIn, totalAssetValue, mcrEth);
@@ -107,7 +107,7 @@ contract Pool is IPool {
         _mcr.updateMCRInternal();
         emit HEDHSold(msg.sender, tokenAmount, ethOut);
     }
-
+    
     /* ========== TOKEN RELATED VIEW FUNCTIONS ========== */
 
     /// Get value in tokens for an ethAmount purchase.
@@ -117,7 +117,7 @@ contract Pool is IPool {
     ///
     function getHEDHForEth(
         uint ethAmount
-    ) public   returns (uint) {
+    ) public view  returns (uint) {
         uint totalAssetValue = address(this).balance;
         uint mcrEth = mcr().getMCR();
         return calculateHEDHForEth(ethAmount, totalAssetValue, mcrEth);
@@ -205,7 +205,7 @@ contract Pool is IPool {
         return CONSTANT_C * 1e18 / 3 * mcrEth / assetValue * mcrEth / assetValue * mcrEth / assetValue;
     }
 
-    function getEthForHEDH(uint hedhAmount) public  returns (uint ethAmount) {
+    function getEthForHEDH(uint hedhAmount) public view  returns (uint ethAmount) {
         uint currentTotalAssetValue = address(this).balance;
         uint mcrEth = mcr().getMCR();
         return calculateEthForHEDH(hedhAmount, currentTotalAssetValue, mcrEth);

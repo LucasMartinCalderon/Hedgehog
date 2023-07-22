@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.21+commit.d9974bed"
+		"version": "0.8.19+commit.7dd6d404"
 	},
 	"language": "Solidity",
 	"output": {
@@ -183,7 +183,7 @@
 		"compilationTarget": {
 			"contracts/assessment/IndividualClaims.sol": "IndividualClaims"
 		},
-		"evmVersion": "shanghai",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -203,10 +203,10 @@
 			]
 		},
 		"contracts/assessment/IndividualClaims.sol": {
-			"keccak256": "0x13d15957b9b64630ce30e74a015097a9026dbf428b559881b12fee5daac2d916",
+			"keccak256": "0x7253a834c80d835f65108983acc2d12d4b95b396e125543981c8b78cb41d031a",
 			"urls": [
-				"bzz-raw://929ab9b6cfbb9e7936b4915d9ef7c36902421f22fbab04f171914a6607f0bbb0",
-				"dweb:/ipfs/QmPaix8EffeXV8fGwEzHw2bB1fEdFwTbN699qkLp9r7NRk"
+				"bzz-raw://f4610a06507306ea226ba8634ff5c28a8cd0f703d3a83b24bb1a4a9f1da3230d",
+				"dweb:/ipfs/QmTDDRaJ5TMm8Cov7dwBMi9e7UY9feTyyVpSHwN88ytxej"
 			]
 		},
 		"contracts/interfaces/IAssessment.sol": {
@@ -217,10 +217,10 @@
 			]
 		},
 		"contracts/interfaces/ICover.sol": {
-			"keccak256": "0xabf8996a1f9ab2326c42ae297e55009904f4d8a19b0976865885ad4e8c6a529f",
+			"keccak256": "0x618e047fdc777235144edfe506efa4cf92b8d7078c625a1f6a35274ded18b539",
 			"urls": [
-				"bzz-raw://66b1cd261e3b8709b05c4aea929e48a94401b3149ef61f16049a4c30f639edb3",
-				"dweb:/ipfs/QmZASEHARjc3UXZNxUihqoZXtTCv1kPr9dzDjpsYvYMnBb"
+				"bzz-raw://1b6bbde4fd32cf465f535b0fa2d60c1a5d10a9d790ff55272d636fab8472d7d9",
+				"dweb:/ipfs/Qmbu29eAmxZ5ZYYLNH9J7SsVEsvmBp9AxLFsm6jMwSAtoK"
 			]
 		},
 		"contracts/interfaces/ICoverNFT.sol": {
@@ -237,6 +237,13 @@
 				"dweb:/ipfs/QmPHtaGcZo3CDBGsugNhUkYNrb9nYMhccz27c4jJPAbiKg"
 			]
 		},
+		"contracts/interfaces/IMCR.sol": {
+			"keccak256": "0xfe501e970cfca32e379ff35233f5c149a6b84345e2d76cc4e9d3f351ae9c9317",
+			"urls": [
+				"bzz-raw://8c67be9e233b4f1f26aee5cbbd19a0b65d64b5a416089940498e906347753317",
+				"dweb:/ipfs/QmS1D3y8xGr11FpZu51KzbFTHrwYYMMAk3mazP4mCZW8VJ"
+			]
+		},
 		"contracts/interfaces/IPool.sol": {
 			"keccak256": "0x4f981cd82fa7f4289d185d8b5c307a7626328196619922bf638f0214bcd42f23",
 			"urls": [
@@ -245,11 +252,11 @@
 			]
 		},
 		"contracts/token/HEDHToken.sol": {
-			"keccak256": "0x9de9f739f368f038809d28f0962bb954db9dff33874c8bbdae0415c97c944535",
+			"keccak256": "0xc59d84572f0b53d119f3666ddafb678213d7d39044515bfe950e87c196be27d6",
 			"license": "GPL-3.0-only",
 			"urls": [
-				"bzz-raw://da0086e8869aee2c5685520f704d397e59cfc02d83f7a08de25aa4839c094033",
-				"dweb:/ipfs/QmTj6Tk1n3BYyuTm45zXQKS2e1g8CZXaDqwiNSKYUkfy9o"
+				"bzz-raw://2547cd58c4f76514623eb221614c0e67e6f6c2f97124d747b37b6f8e01a95e84",
+				"dweb:/ipfs/QmXHARLCX957xoofSAMgTzktMbnEXQsCEkgGFf7188uc57"
 			]
 		},
 		"contracts/token/external/OZIERC20.sol": {
@@ -269,11 +276,11 @@
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/IERC721.sol": {
-			"keccak256": "0x461586fb5e1bae7c8f20946eaac8063ba69175f52ce877d82a87fb797be459ae",
+			"keccak256": "0x55036158b0f3523fa36f2a576743f39dd46bb84bee57e51cd2406c906638cea2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://15eac2a3d51e4084e4a30fed436652cc2e668c4c6ecc24e2cf11046d076e5ff9",
-				"dweb:/ipfs/Qmf659uCMzNkfxiCfopZVRe917j6DwanPXz3Q2JXLmgfUs"
+				"bzz-raw://9c5558c241a34b3fa54c848d99844850c88b03869b47e1fc05f6f261c54aaa35",
+				"dweb:/ipfs/QmbeeMn9RKhT8DmEvDCNdfiDGtDw1YVB2D5HTLqTzefYPb"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/introspection/IERC165.sol": {
