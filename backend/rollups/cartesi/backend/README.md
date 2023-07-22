@@ -140,7 +140,7 @@ When developing an application, it is often important to easily test and debug i
 The host environment can be executed with the following command:
 
 ```shell
-docker compose -f docker-compose.yml -f docker-compose.override.yml -f docker-compose-host.yml up
+docker compose -f docker-compose-base.yml -f docker-compose.override.yml -f docker-compose-host.yml up
 ```
 
 This DApp's back-end is written in Python, so to run it in your machine you need to have `python3` installed.
