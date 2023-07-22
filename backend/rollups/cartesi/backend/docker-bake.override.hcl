@@ -11,13 +11,13 @@ variable "DOCKER_ORGANIZATION" {
 }
 
 target "server" {
-  tags = ["${DOCKER_ORGANIZATION}/dapp:Hedgehog-${TAG}-server"]
+  tags = ["${DOCKER_ORGANIZATION}/dapp:HedgeHog-${TAG}-server"]
 }
 
 target "console" {
-  tags = ["${DOCKER_ORGANIZATION}/dapp:Hedgehog-${TAG}-console"]
+  tags = ["${DOCKER_ORGANIZATION}/dapp:HedgeHog-${TAG}-console"]
 }
 
 target "machine" {
-  tags = ["${DOCKER_ORGANIZATION}/dapp:Hedgehog-${TAG}-machine"]
+  tags = ["${DOCKER_ORGANIZATION}/dapp:HedgeHog-${TAG}-machine"]
 }

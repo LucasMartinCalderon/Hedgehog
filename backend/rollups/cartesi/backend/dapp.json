@@ -1,5 +1,5 @@
 {
   "fs": {
-    "files": ["Hedgehog.py", "entrypoint.sh"]
+    "files": ["HedgeHog.py", "entrypoint.sh"]
   }
 }

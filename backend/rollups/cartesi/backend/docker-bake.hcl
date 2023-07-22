@@ -1,36 +1,38 @@
-group "default" {
-  targets = ["dapp", "server", "console"]
-}
 
-# crossenv toolchain for python dapps
-target "toolchain-python" {
-  context = "./std-rootfs"
-  target  = "toolchain-python"
-  tags    = ["cartesi/toolchain-python"]
+group "default" {
+  targets = ["server", "console"]
 }
 
 target "local-deployments" {
-  context = "./std-rootfs"
+  context = "./docker-riscv"
   target = "local-deployments-stage"
 }
 
 target "deployments" {
-  context = "./std-rootfs"
+  context = "./docker-riscv"
   target = "deployments-stage"
 }
 
-target "fs" {
-  context = "./std-rootfs"
-  target  = "fs-stage"
+target "wrapped" {
+  context = "./docker-riscv"
+  target = "wrapped-stage"
   contexts = {
     dapp = "target:dapp"
+  }
+}
+
+target "fs" {
+  context = "./docker-riscv"
+  target  = "fs-stage"
+  contexts = {
+    wrapped = "target:wrapped"
     deployments = "target:deployments"
     local-deployments = "target:local-deployments"
   }
 }
 
 target "server" {
-  context = "./std-rootfs"
+  context = "./docker-riscv"
   target  = "server-stage"
   contexts = {
     fs = "target:fs"
@@ -38,7 +40,7 @@ target "server" {
 }
 
 target "console" {
-  context = "./std-rootfs"
+  context = "./docker-riscv"
   target  = "console-stage"
   contexts = {
     fs = "target:fs"
@@ -46,9 +48,11 @@ target "console" {
 }
 
 target "machine" {
-  context = "./std-rootfs"
+  context = "./docker-riscv"
   target  = "machine-stage"
   contexts = {
-    server = "target:server"
+    fs = "target:fs"
   }
 }
+
+
