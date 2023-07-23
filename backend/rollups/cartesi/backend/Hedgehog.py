@@ -11,6 +11,7 @@ logger = logging.getLogger(__name__)
 
 rollup_server = environ["ROLLUP_HTTP_SERVER_URL"]
 logger.info(f"HTTP rollup_server url is {rollup_server}")
+print(hex2str("0x48656c6c6f2c20576f726c6421")
 
 def hex2str(hex):
     """
