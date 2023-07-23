@@ -1,2 +1,3 @@
 requests == 2.23.0
 numpy == 1.24.2
+pycryptodome == 3.*

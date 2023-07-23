@@ -1,5 +1,4 @@
 {
-  "address": "0x5a723220579C0DCb8C9253E6b4c62e572E379945",
   "abi": [
     {
       "anonymous": false,
@@ -230,5 +229,6 @@
         "value": "t_array(t_bytes32)dyn_storage"
       }
     }
-  }
+  }, 
+  "address": "0x7160BC1537a9eADF8CC52BC1cee96F47d4bf006a"
 }

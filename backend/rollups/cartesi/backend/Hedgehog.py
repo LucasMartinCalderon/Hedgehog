@@ -4,6 +4,7 @@ from os import environ
 import traceback
 import logging
 import requests
+from Crypto.Hash import keccak
 import numpy as np
 
 logging.basicConfig(level="INFO")
@@ -11,7 +12,10 @@ logger = logging.getLogger(__name__)
 
 rollup_server = environ["ROLLUP_HTTP_SERVER_URL"]
 logger.info(f"HTTP rollup_server url is {rollup_server}")
-print(hex2str("0x48656c6c6f2c20576f726c6421")
+      
+k = keccak.new(digest_bits=256)
+k.update(b'sendMessage(uint)')
+CLAIM_PREMIUM = k.digest()[:4] # first 4 bytes
 
 def hex2str(hex):
     """
@@ -32,7 +36,6 @@ def monte_carlo_simulation():
     qty_x = 1
     period = 606024 
     init_px = 1600
-
     period_u = period /60/60/24/365
     L = qty_x / (1/np.sqrt(init_px)-1/np.sqrt(upperBound))
     qty_y = L * (np.sqrt(init_px)-np.sqrt(lowerBound))
@@ -61,6 +64,9 @@ def monte_carlo_simulation():
     return np.mean(payoffs)
 
 def handle_advance(data):
+    
+    contract_deployed = "0x2cf2228ab1F8517bf248a04f470B2C0D779Fc6a3"
+    
     logger.info(f"Received advance request data {data}")
 
     status = "accept"
@@ -80,6 +86,10 @@ def handle_advance(data):
         response = requests.post(rollup_server + "/report", json={"payload": str2hex(msg)})
         logger.info(f"Received report status {response.status_code} body {response.content}")
 
+    voucher_payload = CLAIM_PREMIUM + encode_abi([uint256], [result])
+    voucher = {"address": contract_deployed, "payload": "0x" + voucher_payload.hex()}
+    post("voucher", voucher)
+    
     return status
 
 def handle_inspect(data):
