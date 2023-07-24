@@ -2,8 +2,8 @@ pragma solidity >=0.5.0;
 import "./ICoverNFT.sol";
 
 struct BuyCoverParams {
-    address token0; // eth address
-    address token1; // pool address
+    address token0; // eth address 0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e
+    address token1; // pool address 0x04b1560f4f58612a24cf13531f4706c817e8a5fe
     uint token1Qty;
     uint token0Qty;
     uint lowerBoundRatio;

@@ -256,7 +256,7 @@ contract Pool is IPool {
     ///
     function calculateTokenSpotPrice(
         uint totalAssetValue,
-        uint mcrEth
+        uint mcrEth // here
     ) public  pure returns (uint tokenPrice) {
 
         uint mcrRatio = calculateMCRRatio(totalAssetValue, mcrEth);

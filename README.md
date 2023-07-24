@@ -76,6 +76,7 @@ Please see the `LICENSE.md` file for details on the project's license.
 For questions about the project, reach out to us:
 - Lucas Martin Calderon - lucas@pentestify.io - Twitter: @lmc_security - Discord: Lucas Martin Calderon
 - Tony Cheng - lu.chenghao24@gmail.com
+- Kenneth Goh - Twitter: @KernelKennethG
 
 ## Acknowledgements
 We'd like to acknowledge the invaluable support and inspiration we've received from the ETHGlobal Hackathon Paris project.
